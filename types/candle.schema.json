@@ -1,0 +1,126 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema",
+    "$id": "https://github.com/CozyGlow/product-calculations-schema/master/types/candle.schema.json",
+    "title": "Candle",
+    "description": "Candle calculations.",
+    "type": "object",
+    "allOf": [
+        { "$ref": "../product-calculations.schema.json" },
+        {
+            "properties": {
+                "type": { "const": "candle" },
+                "fragrance": {
+                    "description": "Candle fragrance.",
+                    "type": "object",
+                    "allOf": [
+                        {
+                            "properties": {
+                                "title": {
+                                    "description": "Candle fragrance.",
+                                    "type": "string"
+                                },
+                                "sku": {
+                                    "description": "Candle fragrance SKU.",
+                                    "type": "string"
+                                },
+                                "brand": {
+                                    "description": "Candle fragrance brand.",
+                                    "type": "string"
+                                },
+                                "manufacturer": {
+                                    "description": "Candle fragrance manufacturer.",
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        {
+                            "oneOf": [
+                                {
+                                    "properties": {
+                                        "load": {
+                                            "description": "Candle fragrance load vs wax.",
+                                            "type": "number",
+                                            "minimum": 0,
+                                            "exclusiveMaximum": 100
+                                        }
+                                    },
+                                    "required": [ "load" ]
+                                    
+                                },
+                                {
+                                    "properties": {
+                                        "content": {
+                                            "description": "Candle fragrance as a proportion of total candle mass.",
+                                            "type": "number",
+                                            "minimum": 0,
+                                            "exclusiveMaximum": 100
+                                        }
+                                    },
+                                    "required": [ "content" ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "dyes": {
+                    "description": "Candle dyes.",
+                    "type": "array",
+                    "items": {
+                        "description": "Candle dye.",
+                        "type": "object",
+                        "allOf": [
+                            {
+                                "properties": {
+                                    "title": {
+                                        "description": "Candle dye title.",
+                                        "type": "string"
+                                    },
+                                    "sku": {
+                                        "description": "Candle dye SKU.",
+                                        "type": "string"
+                                    },
+                                    "brand": {
+                                        "description": "Candle dye brand.",
+                                        "type": "string"
+                                    },
+                                    "manufacturer": {
+                                        "description": "Candle dye manufacturer.",
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            {
+                                "oneOf": [
+                                    {
+                                        "properties": {
+                                            "load": {
+                                                "description": "Candle dye load vs wax.",
+                                                "type": "number",
+                                                "minimum": 0,
+                                                "exclusiveMaximum": 100
+                                            }
+                                        },
+                                        "required": [ "load" ]
+                                    },
+                                    {
+                                        "properties": {
+                                            "content": {
+                                                "description": "Candle dye as a proportion of total candle mass.",
+                                                "type": "number",
+                                                "minimum": 0,
+                                                "exclusiveMaximum": 100
+                                            }
+                                        },
+                                        "required": [ "content" ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "uniqueItems": true
+                }
+            },
+            "required": [ "type" ]
+        }
+    ]
+}

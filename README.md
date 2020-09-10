@@ -1,2 +1,1 @@
-# product-calculations-schema
-Product calculations schema.
+# Product Calculations Schema

@@ -1,0 +1,17 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema",
+    "$id": "https://github.com/CozyGlow/product-calculations-schema/master/product-calculations.schema.json",
+    "title": "Product Calculations",
+    "type": "object",
+    "properties": {
+        "title": {
+            "description": "Product type.",
+            "type": "string"
+        },
+        "type": {
+            "description": "Product type.",
+            "type": "string"
+        }
+    },
+    "required": [ "type" ]
+}
